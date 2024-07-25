@@ -1,6 +1,6 @@
 #!/usr/bin/node
 export default class Building {
-  constructor(sqft) {
+  constructor (sqft) {
     this.sqft = sqft;
     if (this.constructor !== Building) {
       if (typeof this.evacuationWarningMessage !== 'function') {
@@ -9,11 +9,11 @@ export default class Building {
     }
   }
 
-  get sqft() {
+  get sqft () {
     return this._sqft;
   }
 
-  set sqft(value) {
+  set sqft (value) {
     if (typeof value !== 'number') {
       throw new TypeError('sqft must be a number');
     }
