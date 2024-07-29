@@ -1,11 +1,8 @@
 #!/usr/bin/node
+const fetchStudentList = () => [
+  { identifier: 1, givenName: 'Guillaume', city: 'San Francisco' },
+  { identifier: 2, givenName: 'James', city: 'Columbia' },
+  { identifier: 5, givenName: 'Serena', city: 'San Francisco' },
+];
 
-function getListStudents() {
-  return [
-    { id: 1, firstName: 'Guillaume', location: 'San Francisco' },
-    { id: 2, firstName: 'James', location: 'Columbia' },
-    { id: 5, firstName: 'Serena', location: 'San Francisco' }
-  ];
-}
-
-module.exports = getListStudents;
+export default fetchStudentList;
