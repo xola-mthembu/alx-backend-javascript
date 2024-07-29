@@ -1,8 +1,11 @@
 #!/usr/bin/node
-const obtainStudentArray = () => [
-  { studentId: 1, name: 'Guillaume', place: 'San Francisco' },
-  { studentId: 2, name: 'James', place: 'Columbia' },
-  { studentId: 5, name: 'Serena', place: 'San Francisco' },
-];
 
-export default obtainStudentArray;
+function retrieveStudentList() {
+	return [
+		{ id: 1, firstName: 'Guillaume', location: 'San Francisco' },
+		{ id: 2, firstName: 'James', location: 'Columbia' },
+		{ id: 5, firstName: 'Serena', location: 'San Francisco' }
+	];
+}
+
+export default retrieveStudentList;
