@@ -1,16 +1,11 @@
 #!/usr/bin/node
+const tidySet = (set, startString) => {
+  if (typeof startString !== 'string' || startString === '') return '';
 
-function cleanSet(set, startString) {
-  if (startString === '' || typeof startString !== 'string') {
-    return '';
-  }
-  const result = [];
-  for (const value of set) {
-    if (value.startsWith(startString)) {
-      result.push(value.slice(startString.length));
-    }
-  }
-  return result.join('-');
-}
+  return Array.from(set)
+    .filter((value) => typeof value === 'string' && value.startsWith(startString))
+    .map((value) => value.slice(startString.length))
+    .join('-');
+};
 
-module.exports = cleanSet;
+export default tidySet;
