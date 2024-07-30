@@ -1,5 +1,4 @@
 #!/usr/bin/node
-
 import createIteratorObject from "./100-createIteratorObject.js";
 
 import createEmployeesObject from './11-createEmployeesObject.js';
