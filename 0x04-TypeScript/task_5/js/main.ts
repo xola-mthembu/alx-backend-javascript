@@ -1,4 +1,4 @@
-// Task 1, Task 2, Task 3, Task 4, Task 5, and Task 6 code
+// Task 1, Task 2, Task 3, Task 4, Task 5, Task 6, Task 7, Task 8, Task 9, and Task 10 code
 
 interface Teacher {
   readonly firstName: string;
@@ -141,8 +141,6 @@ function executeWork(employee: Director | Teacher) {
 console.log(executeWork(createEmployee(200)));
 console.log(executeWork(createEmployee(1000)));
 
-// Task 7 code
-
 type Subjects = 'Math' | 'History';
 
 function teachClass(todayClass: Subjects): string {
@@ -155,3 +153,75 @@ function teachClass(todayClass: Subjects): string {
 
 console.log(teachClass('Math'));
 console.log(teachClass('History'));
+
+/// <reference path="./crud.d.ts" />
+import { RowID, RowElement } from './interface';
+import * as CRUD from './crud';
+
+const row: RowElement = {
+  firstName: 'Guillaume',
+  lastName: 'Salva',
+};
+
+const newRowID: RowID = CRUD.insertRow(row);
+const updatedRow: RowElement = { firstName: 'Guillaume', lastName: 'Salva', age: 23 };
+
+CRUD.updateRow(newRowID, updatedRow);
+CRUD.deleteRow(newRowID);
+
+import { Cpp } from './subjects/Cpp';
+import { Java } from './subjects/Java';
+import { React } from './subjects/React';
+import { Teacher } from './subjects/Teacher';
+
+export const cpp = new Cpp();
+export const java = new Java();
+export const react = new React();
+export const cTeacher: Teacher = {
+  firstName: 'John',
+  lastName: 'Doe',
+  experienceTeachingC: 10,
+};
+
+console.log('C++');
+cpp.setTeacher(cTeacher);
+console.log(cpp.getRequirements());
+console.log(cpp.getAvailableTeacher());
+
+console.log('Java');
+java.setTeacher(cTeacher);
+console.log(java.getRequirements());
+console.log(java.getAvailableTeacher());
+
+console.log('React');
+react.setTeacher(cTeacher);
+console.log(react.getRequirements());
+console.log(react.getAvailableTeacher());
+
+// Task 11 code
+
+interface MajorCredits {
+  credits: number;
+  brand: 'Major';
+}
+
+interface MinorCredits {
+  credits: number;
+  brand: 'Minor';
+}
+
+function sumMajorCredits(subject1: MajorCredits, subject2: MajorCredits): MajorCredits {
+  return { credits: subject1.credits + subject2.credits, brand: 'Major' };
+}
+
+function sumMinorCredits(subject1: MinorCredits, subject2: MinorCredits): MinorCredits {
+  return { credits: subject1.credits + subject2.credits, brand: 'Minor' };
+}
+
+const major1: MajorCredits = { credits: 3, brand: 'Major' };
+const major2: MajorCredits = { credits: 4, brand: 'Major' };
+const minor1: MinorCredits = { credits: 1, brand: 'Minor' };
+const minor2: MinorCredits = { credits: 2, brand: 'Minor' };
+
+console.log(sumMajorCredits(major1, major2));
+console.log(sumMinorCredits(minor1, minor2));
