@@ -1,4 +1,4 @@
-// Task 1, Task 2, Task 3, Task 4, and Task 5 code
+// Task 1, Task 2, Task 3, Task 4, Task 5, and Task 6 code
 
 interface Teacher {
   readonly firstName: string;
@@ -126,8 +126,6 @@ console.log(createEmployee(200));
 console.log(createEmployee(1000));
 console.log(createEmployee('$500'));
 
-// Task 6 code
-
 function isDirector(employee: Director | Teacher): employee is Director {
   return (employee as Director).workDirectorTasks !== undefined;
 }
@@ -142,3 +140,18 @@ function executeWork(employee: Director | Teacher) {
 
 console.log(executeWork(createEmployee(200)));
 console.log(executeWork(createEmployee(1000)));
+
+// Task 7 code
+
+type Subjects = 'Math' | 'History';
+
+function teachClass(todayClass: Subjects): string {
+  if (todayClass === 'Math') {
+    return 'Teaching Math';
+  } else if (todayClass === 'History') {
+    return 'Teaching History';
+  }
+}
+
+console.log(teachClass('Math'));
+console.log(teachClass('History'));
