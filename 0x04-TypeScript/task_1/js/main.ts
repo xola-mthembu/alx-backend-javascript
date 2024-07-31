@@ -1,3 +1,5 @@
+// Task 1 and Task 2 code
+
 interface Teacher {
   readonly firstName: string;
   readonly lastName: string;
@@ -31,6 +33,8 @@ const director1: Directors = {
 
 console.log(director1);
 
+// Task 3 code
+
 interface printTeacherFunction {
   (firstName: string, lastName: string): string;
 }
@@ -40,3 +44,36 @@ const printTeacher: printTeacherFunction = (firstName, lastName) => {
 };
 
 console.log(printTeacher('John', 'Doe'));
+
+// Task 4 code
+
+interface StudentConstructor {
+  new (firstName: string, lastName: string): StudentClassInterface;
+}
+
+interface StudentClassInterface {
+  workOnHomework(): string;
+  displayName(): string;
+}
+
+class StudentClass implements StudentClassInterface {
+  firstName: string;
+  lastName: string;
+
+  constructor(firstName: string, lastName: string) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
+
+  workOnHomework() {
+    return 'Currently working';
+  }
+
+  displayName() {
+    return this.firstName;
+  }
+}
+
+const student = new StudentClass('John', 'Doe');
+console.log(student.workOnHomework());
+console.log(student.displayName());
