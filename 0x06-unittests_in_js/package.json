@@ -4,14 +4,15 @@
   "description": "",
   "type": "module",
   "scripts": {
-    "test": "mocha"
+    "test": "node --loader=esm mocha"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {},
   "devDependencies": {
     "chai": "^4.2.0",
-    "mocha": "^6.2.3",
+    "esm": "^3.2.25",
+    "mocha": "^6.2.2",
     "sinon": "^7.5.0"
   }
 }
