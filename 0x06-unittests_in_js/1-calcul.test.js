@@ -1,7 +1,6 @@
 #!/usr/bin/node
-
 const assert = require('assert');
-const calculateNumber = require('./1-calcul.js');
+const calculateNumber = require('./1-calcul');
 
 describe('calculateNumber', () => {
   describe('SUM', () => {
