@@ -1,18 +1,24 @@
 {
   "name": "0x06-unittests_in_js",
   "version": "1.0.0",
-  "description": "",
-  "type": "module",
+  "description": "Unittests in JS project",
+  "main": "index.js",
   "scripts": {
-    "test": "node --loader=esm mocha"
+    "test": "mocha",
+    "lint": "eslint .",
+    "full-test": "npm run lint && npm test"
   },
-  "author": "",
+  "author": "Your Name",
   "license": "ISC",
-  "dependencies": {},
   "devDependencies": {
-    "chai": "^4.2.0",
-    "esm": "^3.2.25",
-    "mocha": "^6.2.2",
-    "sinon": "^7.5.0"
+    "chai": "^4.3.4",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.24.2",
+    "mocha": "^9.1.1",
+    "sinon": "^11.1.2"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
   }
 }
