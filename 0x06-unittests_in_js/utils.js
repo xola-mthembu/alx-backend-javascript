@@ -1,18 +1,21 @@
-function calculateNumber(type, a, b) {
-  const roundA = Math.round(a);
-  const roundB = Math.round(b);
+#!/usr/bin/node
+const Utils = {
+  calculateNumber(type, a, b) {
+    const roundedA = Math.round(a);
+    const roundedB = Math.round(b);
 
-  if (type === 'SUM') {
-    return roundA + roundB;
-  } else if (type === 'SUBTRACT') {
-    return roundA - roundB;
-  } else if (type === 'DIVIDE') {
-    if (roundB === 0) {
-      return 'Error';
+    switch (type) {
+      case 'SUM':
+        return roundedA + roundedB;
+      case 'SUBTRACT':
+        return roundedA - roundedB;
+      case 'DIVIDE':
+        if (roundedB === 0) return 'Error';
+        return roundedA / roundedB;
+      default:
+        throw new Error('Invalid type');
     }
-    return roundA / roundB;
   }
-  return null;
-}
+};
 
-export default { calculateNumber };
+module.exports = Utils;
